@@ -1,0 +1,16 @@
+﻿.footerlinks {
+    color:#FFF;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+    font-style: italic;
+    }
+
+    #footer1{
+        background:#202020;
+    }
+
+#footer2 {
+    background: #000;
+}
