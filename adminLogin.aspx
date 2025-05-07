@@ -8,7 +8,7 @@ Inherits="ElibraryManagementSystem.adminLogin" %>
   ContentPlaceHolderID="ContentPlaceHolder1"
   runat="server"
 >
-  <div class="container" style="margin-top: 50px; margin-bottom: 50px">
+  <div class="container-fluid" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card">
