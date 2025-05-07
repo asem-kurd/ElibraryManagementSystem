@@ -31,11 +31,11 @@
 <body>
 
     <form id="form1" runat="server">
-        <div>
+        <div style="padding-right:50px; padding-left:50px; padding-top:10px">
 
 
             <nav class=" navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="HomePage.aspx">
                     <img src="imgs/books.png" width="30" height="30" />
                     AK-LIBRARY
                 </a>
@@ -50,7 +50,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="homepage.aspx">Home</a>
+                            <a class="nav-link" href="HomePage.aspx">Home</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">About Us</a>
@@ -69,7 +69,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" PostBackUrl="~/userLogin.aspx">Login</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
@@ -118,7 +118,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server">Admin Login</asp:LinkButton>&nbsp
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server" PostBackUrl="~/adminLogin.aspx">Admin Login</asp:LinkButton>&nbsp
                             <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Author Management</asp:LinkButton>&nbsp
                             <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server">Publisher Management</asp:LinkButton>&nbsp
                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Book Inventory</asp:LinkButton>&nbsp
