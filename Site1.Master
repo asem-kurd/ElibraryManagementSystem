@@ -73,7 +73,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign up</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" PostBackUrl="~/userSignup.aspx">Sign up</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
@@ -119,11 +119,11 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
                             <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server" PostBackUrl="~/adminLogin.aspx">Admin Login</asp:LinkButton>&nbsp
-                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Author Management</asp:LinkButton>&nbsp
-                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server">Publisher Management</asp:LinkButton>&nbsp
-                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Book Inventory</asp:LinkButton>&nbsp
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Admin Issuing</asp:LinkButton>&nbsp
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server">Member Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" PostBackUrl="~/adminAutherManagement.aspx">Author Management</asp:LinkButton>&nbsp
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" PostBackUrl="~/adminPublisherManagement.aspx">Publisher Management</asp:LinkButton>&nbsp
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" PostBackUrl="~/adminBookInventory.aspx">Book Inventory</asp:LinkButton>&nbsp
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" PostBackUrl="~/adminBookIssuing.aspx">Admin Issuing</asp:LinkButton>&nbsp
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" PostBackUrl="~/adminMemberManagement.aspx">Member Management</asp:LinkButton>
                         </p>
                     </div>
                 </div>
