@@ -8,13 +8,12 @@ Inherits="ElibraryManagementSystem.userSignup" %>
   ContentPlaceHolderID="ContentPlaceHolder1"
   runat="server"
 >
-  <div class="container" style="margin-top: 50px; margin-bottom: 50px">
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row">
       <div class="col-md-8 mx-auto">
         <div class="card">
           <div class="card-body">
-            <!-- Login -->
-            <div class="row">
+            &nbsp;<!-- Login --><div class="row">
               <div class="col">
                 <center>
                   <h2>User Sign Up</h2>
@@ -214,7 +213,7 @@ Inherits="ElibraryManagementSystem.userSignup" %>
                     ID="Button1"
                     runat="server"
                     class="btn btn-dark w-100"
-                    Text="Sign Up"
+                    Text="Sign Up" OnClick="Button1_Click"
                   />
                 </div>
                 <br />
