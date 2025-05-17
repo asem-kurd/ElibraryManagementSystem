@@ -2,6 +2,13 @@
 AutoEventWireup="true" CodeBehind="adminAutherManagement.aspx.cs"
 Inherits="ElibraryManagementSystem.adminAutherManagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".table")
+        .prepend($("<thead></thead>").append($(this).find("tr:first")))
+        .dataTable();
+    });
+  </script>
 </asp:Content>
 <asp:Content
   ID="Content2"
@@ -47,7 +54,7 @@ Inherits="ElibraryManagementSystem.adminAutherManagement" %>
                       ID="Button1"
                       runat="server"
                       class="btn btn-dark"
-                      Text="Fetch"
+                      Text="Fetch" OnClick="Button1_Click"
                     />
                   </div>
                 </div>
@@ -76,6 +83,7 @@ Inherits="ElibraryManagementSystem.adminAutherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Add"
+                    OnClick="Button2_Click"
                   />
                 </div>
                 <br />
@@ -88,6 +96,7 @@ Inherits="ElibraryManagementSystem.adminAutherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Update"
+                    OnClick="Button3_Click"
                   />
                 </div>
                 <br />
@@ -100,6 +109,7 @@ Inherits="ElibraryManagementSystem.adminAutherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Delete"
+                    OnClick="Button4_Click"
                   />
                 </div>
                 <br />
@@ -132,12 +142,36 @@ Inherits="ElibraryManagementSystem.adminAutherManagement" %>
 
             <!-- new row -->
             <div class="row">
+              <asp:SqlDataSource
+                ID="SqlDataSource1"
+                runat="server"
+                ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>"
+                ProviderName="<%$ ConnectionStrings:elibraryDBConnectionString.ProviderName %>"
+                SelectCommand="SELECT * FROM [author_master_tbl]"
+              ></asp:SqlDataSource>
               <div class="col">
                 <asp:GridView
                   ID="GridView1"
-                  class="table"
+                  CssClass="table"
                   runat="server"
-                ></asp:GridView>
+                  AutoGenerateColumns="False"
+                  DataKeyNames="author_id"
+                  DataSourceID="SqlDataSource1"
+                >
+                  <Columns>
+                    <asp:BoundField
+                      DataField="author_id"
+                      HeaderText="author_id"
+                      ReadOnly="True"
+                      SortExpression="author_id"
+                    />
+                    <asp:BoundField
+                      DataField="author_name"
+                      HeaderText="author_name"
+                      SortExpression="author_name"
+                    />
+                  </Columns>
+                </asp:GridView>
               </div>
             </div>
           </div>

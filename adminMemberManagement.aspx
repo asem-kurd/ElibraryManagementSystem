@@ -38,7 +38,7 @@ Inherits="ElibraryManagementSystem.adminMemberManagement" %>
                     ID="Button1"
                     runat="server"
                     CssClass="btn btn-dark"
-                    Text="Fetch"
+                    Text="Fetch" OnClick="Button1_Click"
                   />
                 </div>
               </div>
@@ -50,7 +50,7 @@ Inherits="ElibraryManagementSystem.adminMemberManagement" %>
                   runat="server"
                   ReadOnly="True"
                 ></asp:TextBox>
-              </div>
+              &nbsp;</div>
               <div class="col-md-4">
                 <label>Account Status</label>
                 <div class="input-group">
@@ -63,19 +63,19 @@ Inherits="ElibraryManagementSystem.adminMemberManagement" %>
                   <asp:LinkButton
                     ID="LinkButton1"
                     CssClass="btn btn-success btn-sm"
-                    runat="server"
+                    runat="server" OnClick="LinkButton1_Click"
                     >A</asp:LinkButton
                   >
                   <asp:LinkButton
                     ID="LinkButton2"
                     CssClass="btn btn-warning btn-sm"
-                    runat="server"
+                    runat="server" OnClick="LinkButton2_Click"
                     >B</asp:LinkButton
                   >
                   <asp:LinkButton
                     ID="LinkButton3"
                     CssClass="btn btn-danger btn-sm"
-                    runat="server"
+                    runat="server" OnClick="LinkButton3_Click"
                     >R</asp:LinkButton
                   >
                 </div>
@@ -174,7 +174,7 @@ Inherits="ElibraryManagementSystem.adminMemberManagement" %>
                   ID="Button6"
                   runat="server"
                   CssClass="btn btn-dark w-50"
-                  Text="Delete User Permanently"
+                  Text="Delete User Permanently" OnClick="Button6_Click"
                 />
               </div>
             </div>
@@ -193,13 +193,22 @@ Inherits="ElibraryManagementSystem.adminMemberManagement" %>
             </div>
             <hr />
             <div class="row">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT * FROM [member_master_tbl]"></asp:SqlDataSource>
               <div class="col">
                 <asp:GridView
                   ID="GridView1"
                   CssClass="table table-striped"
-                  runat="server"
-                ></asp:GridView>
-              </div>
+                  runat="server" AutoGenerateColumns="False" DataKeyNames="member_id" DataSourceID="SqlDataSource1"
+                >
+                    <Columns>
+                        <asp:BoundField DataField="member_id" HeaderText="ID" ReadOnly="True" SortExpression="member_id" />
+                        <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                        <asp:BoundField DataField="account_status" HeaderText="Status" SortExpression="account_status" />
+                        <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+                        <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
+                    </Columns>
+                  </asp:GridView>
+              &nbsp;</div>
             </div>
           </div>
         </div>

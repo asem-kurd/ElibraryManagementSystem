@@ -48,6 +48,7 @@ Inherits="ElibraryManagementSystem.userLogin" %>
                     class="form-control"
                     runat="server"
                     placeholder="Password"
+                    TextMode="Password"
                   ></asp:TextBox>
                 </div>
                 <br />
@@ -57,6 +58,7 @@ Inherits="ElibraryManagementSystem.userLogin" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Login"
+                    OnClick="Button1_Click"
                   />
                 </div>
                 <br />

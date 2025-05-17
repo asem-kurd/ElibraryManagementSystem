@@ -86,11 +86,25 @@ namespace ElibraryManagementSystem
 				cmd.ExecuteNonQuery();
 				con.Close();
 				Response.Write("<script>alert('Sign Up Successful. Go to Login to Login');</script>");
+				clearForm();
 			}
 			catch (Exception ex)
 			{
 				Response.Write("<script>alert('" + ex.Message + "');</script>");
 			}
+		}
+
+		void clearForm()
+		{
+			TextBox1.Text = "";
+			TextBox2.Text = "";
+			TextBox3.Text = "";
+			TextBox4.Text = "";
+			TextBox6.Text = "";
+			TextBox7.Text = "";
+			TextBox8.Text = "";
+			TextBox9.Text = "";
+			TextBox10.Text = "";
 		}
 	}
 }

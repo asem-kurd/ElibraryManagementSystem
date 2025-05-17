@@ -8,7 +8,7 @@ Inherits="ElibraryManagementSystem.adminLogin" %>
   ContentPlaceHolderID="ContentPlaceHolder1"
   runat="server"
 >
-  <div class="container-fluid" style="margin-top: 50px; margin-bottom: 50px">
+    <div class="container-fluid" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card">
@@ -47,6 +47,7 @@ Inherits="ElibraryManagementSystem.adminLogin" %>
                     class="form-control"
                     runat="server"
                     placeholder="Password"
+                    TextMode="Password"
                   ></asp:TextBox>
                 </div>
                 <br />
@@ -56,6 +57,7 @@ Inherits="ElibraryManagementSystem.adminLogin" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Login"
+                    OnClick="Button1_Click"
                   />
                 </div>
               </div>

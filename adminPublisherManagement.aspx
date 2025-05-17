@@ -2,13 +2,20 @@
 AutoEventWireup="true" CodeBehind="adminPublisherManagement.aspx.cs"
 Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $(".table")
+        .prepend($("<thead></thead>").append($(this).find("tr:first")))
+        .dataTable();
+    });
+  </script>
 </asp:Content>
 <asp:Content
   ID="Content2"
   ContentPlaceHolderID="ContentPlaceHolder1"
   runat="server"
 >
-  <div class="container" style="margin-top: 50px; margin-bottom: 50px">
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px">
     <div class="row">
       <div class="col-md-6">
         <div class="card">
@@ -19,7 +26,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
                 <center>
                   <img src="imgs\books.png" width="150px" height="150px" />
                   <br />
-                  <h2>Publisher details</h2>
+                  <h2>PuPublisher details</h2>
                 </center>
               </div>
             </div>
@@ -48,6 +55,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
                       runat="server"
                       class="btn btn-dark"
                       Text="Fetch"
+                      OnClick="Button1_Click"
                     />
                   </div>
                 </div>
@@ -76,6 +84,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Add"
+                    OnClick="Button2_Click"
                   />
                 </div>
                 <br />
@@ -88,6 +97,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Update"
+                    OnClick="Button3_Click"
                   />
                 </div>
                 <br />
@@ -100,6 +110,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
                     runat="server"
                     class="btn btn-dark w-100"
                     Text="Delete"
+                    OnClick="Button4_Click"
                   />
                 </div>
                 <br />
@@ -117,7 +128,7 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
             <div class="row">
               <div class="col">
                 <center>
-                  <h2>Publisher List</h2>
+                  <h2>Publisher Listh</h2>
                 </center>
               </div>
             </div>
@@ -132,12 +143,35 @@ Inherits="ElibraryManagementSystem.adminPublisherManagement" %>
 
             <!-- new row -->
             <div class="row">
+              <asp:SqlDataSource
+                ID="SqlDataSource1"
+                runat="server"
+                ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>"
+                SelectCommand="SELECT * FROM [publisher_master_tbl]"
+              ></asp:SqlDataSource>
               <div class="col">
                 <asp:GridView
                   ID="GridView1"
                   class="table"
                   runat="server"
-                ></asp:GridView>
+                  AutoGenerateColumns="False"
+                  DataKeyNames="publisher_id"
+                  DataSourceID="SqlDataSource1"
+                >
+                  <Columns>
+                    <asp:BoundField
+                      DataField="publisher_id"
+                      HeaderText="publisher_id"
+                      ReadOnly="True"
+                      SortExpression="publisher_id"
+                    />
+                    <asp:BoundField
+                      DataField="publisher_name"
+                      HeaderText="publisher_name"
+                      SortExpression="publisher_name"
+                    />
+                  </Columns>
+                </asp:GridView>
               </div>
             </div>
           </div>
